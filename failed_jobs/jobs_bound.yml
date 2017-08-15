@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: bound_jobs
+spec:
+  activeDeadlineSeconds: 30
+  template:
+    metadata:
+      name: bound_jobs_meta
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: box
+        image: alpine
+        command: ["/bin/sh", "-c", "exit 1"]
