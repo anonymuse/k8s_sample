@@ -1,0 +1,25 @@
+...
+containers:
+  - name: rsvp-app
+    image: anonymuse/rsvp-app
+    env:
+    - name: MONGODB_HOST
+      value: mongodb
+    - name: TEXT_MAP_01
+      valueFrom:
+        configMapKeyRef:
+          name: company01
+          key: INPUT1
+    - name: TEXT_MAP_02
+      valueFrom:
+        configMapKeyRef:
+          name: company01
+          key: INPUT2
+    - name: TEXT_MAP_01
+      valueFrom:
+        configMapKeyRef:
+          name: company01
+          key: ADDRESS
+
+...
+
